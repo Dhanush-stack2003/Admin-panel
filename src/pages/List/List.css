@@ -1,0 +1,125 @@
+.list{
+    display: flex;
+}
+
+.list_container{
+    flex:6;
+    margin-top: 0%;
+    padding-top: 0%;
+    background-color: #f0f0f0;
+}
+
+.employee_handle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.employee_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    padding: 10px;
+    border-bottom: 0.5px solid rgb(223, 222, 222);
+}
+
+.employee_section >  div{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+.active_employee{
+    font-size: 30px;
+    font-weight:400;
+}
+
+.add_employee{
+    display: flex;
+    gap: 30px;
+}
+
+.add_employee p{
+    background-color: rgb(37, 37, 241);
+    width: 150px;
+    padding: 15px 0px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.add_employee span{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0.5px solid lightgrey;
+    border-radius: 10px;
+}
+
+.filter_employee{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: gray;
+
+}
+
+.filter_options{
+    display: flex;
+    color: gray;
+
+}
+
+.filter_option{
+    display: flex;
+    border-right: 0.5px solid lightgray;
+    padding:5px;
+    gap: 10px;
+    margin-left:40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.more_filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
+    color: rgba(52, 52, 233, 0.897);
+    margin-left:  20px;
+    margin-right: 40px;
+}
+
+.more_filter_dots{
+    color: blue;
+    font-size: 25px;
+}
+
+.filter_icon{
+    border-radius: 10px;
+    border: 0.5px solid blue;
+    font-size: 20px;
+    padding: 10px;
+    color: blue;
+}
+
+.cancel_filter{
+    text-align: center;
+    font-size: 30px;
+    color: grey;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.triangle{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+

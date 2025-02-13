@@ -1,0 +1,103 @@
+.table{
+    background-color: #fff5;
+}
+
+.table_body{
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: max-content;
+    max-height: 70vh;
+}
+
+table{
+    width: 100%;
+    height: 60vh;
+}
+
+thead,th{
+    border-bottom: 1px solid rgb(219, 218, 218);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #f8f9fa;
+    color: #333;
+    position: sticky;
+    top: 0;
+}
+
+table, th, td{
+    padding: 1rem;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+tbody,td{
+    padding: 20px;
+    background-color: #ffffff;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+th input{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+td input{
+    width: 20px;
+    height: 20px;
+}
+
+tbody{
+    overflow: auto;
+    overflow:scroll;
+}
+tbody tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover td{
+    background-color: #f1f1f1;
+    transition:background 0.2s ease-in-out;
+}
+
+.checked{
+    background-color: #f1f1f1;
+}
+
+.active_user{
+    color:#008000;
+    font-weight: 500;
+}
+.user_inactive{
+    color: red;
+    font-weight: 500;
+}
+
+.delete_button{
+    background-color: #D0312D;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.active_row{
+    background: lightgrey;
+    color: grey;
+}
+
+td img{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+
+ table tbody tr:last-of-type{
+    border-bottom:1px solid grey;
+}
