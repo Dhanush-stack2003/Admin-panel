@@ -1,0 +1,88 @@
+const User_data = [
+  {
+    id: 1,
+    username: "vimal",
+    email: "vimal@gmail.com",
+    status: "Active",
+    department: "IT",
+  },
+  {
+    id: 2,
+    username: "rajesh",
+    email: "rajesh@gmail.com",
+    status: "Inactive",
+    department: "IT",
+  },
+  {
+    id: 3,
+    username: "ramkumar",
+    email: "ramkumar@gmail.com",
+    status: "Inactive",
+    department: "Accounting",
+  },
+  {
+    id: 4,
+    username: "kumar",
+    email: "kumar@gmail.com",
+    status: "Inactive",
+    department: "HR",
+  },
+  {
+    id: 5,
+    username: "rahul",
+    email: "rahul@gmail.com",
+    status: "Active",
+    department: "Marketing",
+  },
+  {
+    id: 6,
+    username: "alex",
+    email: "alex@gmail.com",
+    status: "Active",
+    department: "Marketing",
+  },
+  {
+    id: 7,
+    username: "joseph",
+    email: "joseph@gmail.com",
+    status: "Active",
+    department: "IT",
+  },
+  {
+    id: 8,
+    username: "raja",
+    email: "raja@gmail.com",
+    status: "Active",
+    department: "IT",
+  },
+  {
+    id: 9,
+    username: " rakesh",
+    email: "rakesh@gmail.com",
+    status: "Active",
+    department: "Marketing",
+  },
+  {
+    id: 10,
+    username: "karthik",
+    email: "karthik@gmail.com",
+    status: "Active",
+    department: "HR",
+  },
+  {
+    id: 11,
+    username: "aravind",
+    email: "Aravind@gmail.com",
+    status: "Active",
+    department: "Accounting",
+  },
+  {
+    id: 12,
+    username: "akil",
+    email: "akil@gmail.com",
+    status: "Active",
+    department: "IT",
+  },
+];
+
+export default User_data;

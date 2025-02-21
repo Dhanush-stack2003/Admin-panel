@@ -2,19 +2,16 @@ import {useState} from 'react'
 import '../Sidebar/Sidebar.css'
 import { MdDashboard } from "react-icons/md";
 import { FaIndianRupeeSign } from "react-icons/fa6";
-import { CiSquareCheck } from "react-icons/ci";
 import { IoIosStats } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { SiGoogleforms } from "react-icons/si";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosPaper } from "react-icons/io";
 import { MdLocalShipping } from "react-icons/md";
-import { TbLogout } from "react-icons/tb";
-import { FaRegCircleUser } from "react-icons/fa6";
 import { IoLogOut } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { FaCheckSquare } from "react-icons/fa";
-import {IconContext} from 'react-icons'
+import {IconContext} from 'react-icons';
 function Sidebar() {
   const [active,setActive] = useState(null);
 
@@ -22,7 +19,6 @@ function Sidebar() {
     setActive(index)
   }
 
-  console.log(active)
   return (
     <IconContext.Provider value={{ size:'20px'}}>
       <div className="sidebar">

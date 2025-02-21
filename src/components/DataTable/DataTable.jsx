@@ -1,21 +1,47 @@
-import {useState} from 'react'
-import '../DataTable/DataTable.css'
-import user_profile from '../../Asserts/user.png'
+import { useEffect, useState } from "react";
+import "../DataTable/DataTable.css";
+import User_data from "../../Userdata.js";
+import user_profile from "../../Asserts/user.png";
 
 function DataTable() {
-  const [checkedAll,setCheckedAll] = useState(false);
-  const [activeRows,setActiveRow] = useState([]);
+  const [checkedAll, setCheckedAll] = useState([]);
+  const [data, setData] = useState([]);
 
-  const selectHandler = (id) => {
-    const parsedInt = parseInt(id)
-    setActiveRow({...activeRows,parsedInt})
-  }
+  useEffect(() => {
+    setData([...User_data]);
+  }, []);
 
-  console.log(activeRows)
+  console.log(data);
+
+  const deleteUser = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
+
+  const selectHandler = (event) => {
+    let isChecked = event.target.checked;
+    let parsedInt = parseInt(event.target.value);
+    if (isChecked) {
+      setCheckedAll([...checkedAll, parsedInt]);
+    } else {
+      setCheckedAll(
+        checkedAll.filter((prevdata) => {
+          return prevdata !== parsedInt;
+        })
+      );
+    }
+  };
 
   const toggle = () => {
-    setCheckedAll(!checkedAll)
-  }
+    if (checkedAll.length === User_data.length) {
+      setCheckedAll([]);
+    } else {
+      const checkedata = User_data.map((item) => {
+        return item.id;
+      });
+      setCheckedAll(checkedata);
+    }
+  };
+
   return (
     <main className="table">
       <section className="table_body">
@@ -34,198 +60,44 @@ function DataTable() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>01</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                vimal
-              </td>
-              <td>vimal@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td className="checked">
-                <input type="checkbox" />
-              </td>
-              <td className="checked">02</td>
-              <td className="checked">
-                <img src={user_profile} alt="avatar" />
-                rajesh
-              </td>
-              <td className="checked">rajesh@gmail.com</td>
-              <td className="user_inactive checked">Inactive</td>
-              <td className="checked">IT</td>
-              <td className="checked">
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td className="checked">
-                <input type="checkbox" />
-              </td>
-              <td className="checked">03</td>
-              <td className="checked">
-                <img src={user_profile} alt="avatar" />
-                ramkumar
-              </td>
-              <td className="checked"> ramkumar@gmail.com</td>
-              <td className="user_inactive checked">Inactive</td>
-              <td className="checked">Accounting</td>
-              <td className="checked">
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td className="checked">
-                <input type="checkbox" />
-              </td>
-              <td className="checked">04</td>
-              <td className="checked">
-                <img src={user_profile} alt="avatar" />
-                kumar
-              </td>
-              <td className="checked">kumar@gmail.com</td>
-              <td className="user_inactive checked">Inactive</td>
-              <td className="checked">HR</td>
-              <td className="checked">
-                <span className="delete_button ">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>05</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                rahul
-              </td>
-              <td>rahul@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>Marketing</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>06</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                alex
-              </td>
-              <td>alex@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>Marketing</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>07</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                joseph
-              </td>
-              <td>joseph@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>08</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                raja
-              </td>
-              <td>raja@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>09</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                rakesh
-              </td>
-              <td>rakesh@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>10</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                karthik
-              </td>
-              <td>karthik@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>11</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                aravind
-              </td>
-              <td>Aravind@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>12</td>
-              <td>
-                <img src={user_profile} alt="avatar" />
-                akil
-              </td>
-              <td>akil@gmail.com</td>
-              <td className="active_user">Active</td>
-              <td>IT</td>
-              <td>
-                <span className="delete_button">Delete</span>
-              </td>
-            </tr>
+            {data.map((item, index) => {
+              return (
+                <tr
+                  key={index}
+                >
+                  <td key={item.id}>
+                    <input
+                      type="checkbox"
+                      value={item.id}
+                      onChange={selectHandler}
+                      checked={checkedAll.includes(item.id)}                      
+                    />
+                  </td>
+                  <td >{item.id}</td>
+                  <td >
+                    <img src={user_profile} alt="avatar" />
+                    {item.username}
+                  </td>
+                  <td >{item.email}</td>
+                  <td
+                    className={
+                      item.status === "Active" ? "user_active" :"user_inactive"
+                    }
+                  >
+                    {item.status}
+                  </td>
+                  <td >{item.department}</td>
+                  <td>
+                    <span
+                      className="delete_button"
+                      onClick={() => deleteUser(item.id)}
+                    >
+                      Delete
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </section>
@@ -233,4 +105,4 @@ function DataTable() {
   );
 }
 
-export default DataTable
+export default DataTable;
